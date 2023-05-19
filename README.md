@@ -1,2 +1,3 @@
 # Independent_work_Transfer
-You could say that the practice..
+
+Here will be preliminary/self-study work on assignments, both mainstream and auxiliary..
