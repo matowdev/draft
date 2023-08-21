@@ -1,0 +1,23 @@
+.page {
+  margin: 30px auto;
+  max-width: 1200px;
+  font-family: "Roboto Mono", monospace;
+  font-size: 20px;
+  line-height: normal;
+}
+
+.page__text {
+  color: lightcoral;
+}
+
+.page__strong {
+  color: lightgoldenrodyellow;
+}
+
+#strong {
+  color: lightgreen;
+}
+
+strong {
+  color: lightsalmon;
+}
