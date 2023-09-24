@@ -4,7 +4,7 @@ function readNumber() {
     console.log(enterNumber);
     return alert('Вы ввели: ' + enterNumber);
   } else if (enterNumber === null) {
-    return alert('Вы отменили ввод, досвидания!');
+    return alert('Вы отменили ввод, до свидания!');
   } else {
     alert('Введите соответствующее число!');
     return readNumber();
