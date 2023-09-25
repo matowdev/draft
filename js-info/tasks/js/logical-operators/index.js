@@ -8,7 +8,7 @@ console.log(console.log(1) || 5 || console.log(3)); // 1 и 5
 console.log(1 && null && 2); // null, потому что это первое «ложное» значение из списка
 
 // Что выведет console.log (И)?
-console.log(console.log(1) && console.log(2)); // 1
+console.log(console.log(1) && console.log(2)); // 1, а затем undefined
 
 // Что выведет этот код?
 console.log(null || (2 && 3) || 4); // 3
@@ -36,16 +36,48 @@ if (null || (-1 && 1)) console.log('third'); // выполнится
 
 // Проверка логина
 function login() {
-  let enterName = prompt('Представитесь: ', '');
-  if (enterName !== '' && enterName !== null) {
-    console.log(enterName);
-    return alert('Вы ввели: ' + enterName);
-  } else if (enterName === null) {
-    return alert('Отменено!');
-  } else {
-    alert('Ваше имя?');
+  let enterName = prompt('Кто там? ', '');
+  let enterPassword;
+
+  if (enterName === null) {
+    return alert('Отмена!?');
+  }
+  if (enterName !== '' && enterName !== 'Админ') {
+    return alert(enterName + ', я вас не знаю, до свидания!');
+  } else if (enterName === '') {
+    alert('Представитесь!? ', '');
     return login();
+  }
+  if (enterName === 'Админ') {
+    enterPassword = prompt('Введите пароль: ', '');
+  }
+  if (enterPassword === null) {
+    return alert('Отмена!?');
+  } else if (enterPassword !== 'Я главный') {
+    alert('Неверный пароль!');
+    return login();
+  } else if (enterPassword === 'Я главный') {
+    return alert('Здравствуйте!');
   }
 }
 
 login();
+
+// решение JS info
+// let userName = prompt('Кто там?', '');
+
+// if (userName === 'Админ') {
+//   let pass = prompt('Пароль?', '');
+
+//   if (pass === 'Я главный') {
+//     alert('Здравствуйте!');
+//   } else if (pass === '' || pass === null) {
+//     alert('Отменено');
+//   } else {
+//     alert('Неверный пароль');
+//   }
+// } else if (userName === '' || userName === null) {
+//   alert('Отменено');
+// } else {
+//   alert('Я вас не знаю');
+// }
