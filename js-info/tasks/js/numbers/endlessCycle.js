@@ -1,3 +1,4 @@
+// Бесконечный цикл по ошибке
 function endlessCycle() {
   // let i = 0;
   // while (i != 10) {

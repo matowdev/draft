@@ -1,3 +1,5 @@
+// Случайное целое число от min до max
+// Напишите функцию randomInteger(min, max), которая генерирует случайное целое (integer) число от min до max (включительно)
 function randomInteger(min, max) {
   let minMax = Math.floor(Math.random() * (max + min));
   return console.log(minMax);
