@@ -4,40 +4,46 @@
 // 3. Подсчитывает и возвращает сумму элементов массива.
 // P.S. Ноль 0 – считается числом, не останавливайте ввод значений при вводе «0».
 
-function getData() {
-  let data = prompt('Введите число, от 0 до 10:', '');
-  if (data === null) {
-    return alert('Досвидания!');
-  } else if (data === '') {
+let numArr = [];
+
+// for (let i = 0; i < 1000; i++) {
+//   let str = prompt('Введите число', '');
+//   arr.push(str);
+//   console.log(arr);
+// }
+
+function sumInput() {
+  let num = prompt('Введите число, от 0 до 10:', '');
+  if (num === null) {
+    alert('До свидания!');
+    return alert(`Вот такая получилась сумма: ${getSum()}`);
+  } else if (num === '') {
     alert('Вы ничего не ввели..');
-    return getData();
-  } else if (isNaN(data) === true) {
+    return sumInput();
+  } else if (isNaN(num) === true) {
     alert('Давайте будем вводить только числа!');
-    return getData();
-  } else if (data < 0) {
+    return sumInput();
+  } else if (num < 0) {
     alert('Нет, нет.. только положительные числа!');
-    return getData();
-  } else if (data > 10) {
+    return sumInput();
+  } else if (num > 10) {
     alert('До 10, пожалуйста!');
-    return getData();
+    return sumInput();
   }
-  data = Math.floor(data);
-  return data;
+  num = Math.floor(num);
+  numArr.push(num);
+  sumInput();
 }
 
-function getNumArr() {
-  let num = getData();
-  let numArr = [];
-  if (num !== undefined) {
-    numArr.push(num);
-    console.log(numArr);
-    return getNumArr();
-  } else {
-    alert('Вот такая получилась сумма: ');
-  }
-}
+sumInput();
 
-getNumArr();
+function getSum() {
+  let sum = 0;
+  for (let number of numArr) {
+    sum += number;
+  }
+  return sum;
+}
 
 // решение JS Info
 // function sumInput() {
