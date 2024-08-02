@@ -5,9 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Modules, introduction</title>
-  <script src="index.js" type="module" defer></script>
+  <script src="index.js" type="module"></script>
 
   <!-- ! Так как модули поддерживают ряд специальных ключевых слов, и у них есть ряд особенностей, то необходимо явно сказать браузеру, что скрипт является модулем, при помощи атрибута <script type="module">. -->
+
+  <!-- ! Модули/type="module" всегда выполняются в отложенном (deferred) режиме, точно так же, как скрипты с атрибутом defer.. т.е. прописывать/указывать дополнительно атрибут defer не нужно! -->
 </head>
 
 <body>
